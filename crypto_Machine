@@ -1,0 +1,30 @@
+def crypto_machine():
+    
+    key="abcdefghijklmnopqrstuvwxyz !"
+    value=key[-1]+key[0:-1]
+
+    encry={}
+    decry={}
+    encry=dict(zip(key,value))
+    #print(encry)
+    decry=dict(zip(value,key))
+    #print(decry)
+
+    message=input("Enter Your Secrete message :")
+    mode=input("Enter The Mode : Encode(E) Or Decode(D) :")
+    newmsg=""
+    if mode.upper()=="E":
+        for i in message: 
+            newmsg=newmsg+encry[i]
+    else: 
+        if mode.upper()=="D":
+            for i in message:
+                newmsg=newmsg+decry[i]
+        else: 
+            print("Please Enter a Correct Choice:")
+    return(newmsg)
+print(crypto_machine())
+
+
+
+    
